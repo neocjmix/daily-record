@@ -1,0 +1,82 @@
+{
+  "name": "daily-record",
+  "version": "1.0.0",
+  "description": "daily-record",
+  "repository": "not yet",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.babel.js",
+    "test": "NODE_ENV=test echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack --config ./config/webpack.config.prod.babel.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "acorn": "^6.0.4",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.4",
+    "core-js": "^2.5.7",
+    "eslint": "^5.9.0",
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mobx-react-devtools": "^6.0.3",
+    "react-dev-utils": "^6.1.1",
+    "sass": "^1.15.1",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "date-fns": "^1.29.0",
+    "mobx": "^5.6.0",
+    "mobx-react": "^5.4.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "recompose": "^0.30.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "react-app"
+    ],
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1,
+          "ignoredNodes": [
+            "JSXElement *"
+          ]
+        }
+      ],
+      "react/jsx-indent": [
+        2,
+        2
+      ],
+      "react/jsx-indent-props": [
+        2,
+        "first"
+      ]
+    }
+  }
+}
