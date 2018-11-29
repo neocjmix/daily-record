@@ -1,20 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { inject, Provider } from 'mobx-react'
-import { configure, observable } from 'mobx'
+import { Provider } from 'mobx-react'
+import { configure } from 'mobx'
 import DevTools from 'mobx-react-devtools'
 import properties from 'properties'
+import HelloWorldStore from './HelloWorld/HelloWorldStore'
+import HelloWorld from './HelloWorld/HelloWorld'
 
 configure({ enforceActions: 'always' })
 
-const store = observable({
-  name: 'World',
-})
-
-const HelloWorld = inject('store')(() => <div>Hello, {store.name}!</div>)
+const helloWorldStore = HelloWorldStore()
 
 const App = () =>
-  <Provider store={store}>
+  <Provider store={helloWorldStore}>
     <>
       <HelloWorld/>
     </>
@@ -22,5 +20,5 @@ const App = () =>
 
 render(<>
   <App/>
-  {properties.env === 'development' ? <DevTools /> : ''}
+  {properties.env === 'development' ? <DevTools/> : ''}
 </>, document.getElementById('app'))

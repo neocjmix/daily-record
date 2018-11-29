@@ -5,4 +5,5 @@ import webpackCommon from './webpack.config.common.babel.js'
 export default {
   ...webpackCommon({ properties, paths }),
   mode: 'development',
+  devtool: 'cheap-module-source-map',
 }

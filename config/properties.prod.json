@@ -1,4 +1,4 @@
 {
-  "env" : "production",
-  "appName" : "Daily Record"
+  "env": "production",
+  "appName": "Daily Record"
 }

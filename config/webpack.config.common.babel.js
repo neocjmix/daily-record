@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import DirectoryNamedWebpackPlugin from 'directory-named-webpack-plugin'
 
 export default ({ properties, paths }) => ({
-  mode: 'production',
   entry: {
     index: paths.entry,
   },
@@ -9,6 +9,9 @@ export default ({ properties, paths }) => ({
     alias: {
       properties: paths.properties,
     },
+    plugins: [
+      new DirectoryNamedWebpackPlugin(true),
+    ],
   },
   output: {
     path: paths.output,
@@ -36,6 +39,12 @@ export default ({ properties, paths }) => ({
         test: /\.(js|mjs|jsx)$/,
         loader: require.resolve('babel-loader'),
         exclude: /node_modules/,
+      },
+
+      // sass
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
